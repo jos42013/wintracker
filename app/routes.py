@@ -1,3 +1,4 @@
+# Définit les endpoints (/api/windows, /dashboard)
 from flask import Flask, render_template, jsonify, send_file, request
 from logger import LogManager
 from monitor import WindowMonitor
@@ -30,7 +31,6 @@ def get_logs():
 
 @app.route('/api/config', methods=['GET', 'POST'])
 def handle_config():
-    #rint(f"\n\n\nFormulaire aire : {request.json}\n\n\n")
     if request.method == 'POST':
         new_config = request.json
         config.update_config(new_config)

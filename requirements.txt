@@ -4,3 +4,4 @@ schedule==1.1.0
 pywin32==310
 matplotlib==3.10.1
 seaborn==0.13.2
+pandas==2.2.3

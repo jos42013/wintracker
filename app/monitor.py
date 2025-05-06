@@ -1,3 +1,4 @@
+# 	Surveillance des fenêtres actives
 import win32gui
 import threading
 import time

@@ -1,3 +1,4 @@
+# Enregistre l’activité dans active_windows.log
 import json
 import os
 from datetime import datetime

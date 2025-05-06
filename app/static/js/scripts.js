@@ -24,7 +24,6 @@ const footerHTML = `
     <p class="logo">
         &copy; 2025
         <samp>WinTracker</samp>
-        
     </p>
     
 </footer>
