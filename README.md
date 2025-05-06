@@ -1,13 +1,15 @@
 # Flask Active Windows Logger
 
-This project is a Flask web application that periodically logs the active windows on the desktop. It is designed for monitoring application usage for cybersecurity and productivity purposes.
+Ce projet est une application web Flask qui enregistre périodiquement les fenêtres actives sur le bureau. Il est conçu pour surveiller l'utilisation des applications à des fins de cybersécurité et de productivité.
 
-## Project Structure
+## Structure du Projet
 
 ```
-flask-active-windows-logger
+projet_Journal
 ├── app
 │   ├── __init__.py
+|   ├── config.py
+|   ├── monitor.py
 │   ├── routes.py
 │   ├── logger.py
 │   ├── templates
@@ -24,38 +26,75 @@ flask-active-windows-logger
 └── README.md
 ```
 
+## Fonctionnalités
+
+- **Journalisation des fenêtres actives** : Enregistre périodiquement les fenêtres actives sur le bureau dans un fichier log.
+- **Affichage des statistiques** : Génère un graphique des fenêtres les plus utilisées.
+- **Configuration dynamique** : Permet de modifier les paramètres de journalisation via une interface utilisateur.
+- **API REST** :
+  - `/api/windows` : Récupère les fenêtres actives actuelles.
+  - `/api/logs` : Récupère les journaux des fenêtres actives.
+  - `/api/config` : Permet de consulter et de modifier la configuration.
+  - `/api/window_statistics` : Génère un graphique des statistiques des fenêtres.
+
 ## Installation
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd flask-active-windows-logger
-   ```
+1. Clonez le dépôt :
+   ```bash
+   git clone <url-du-depot>
+   cd projet_Journal
 
-2. Install the required dependencies:
+2. Installez les dépendances requises :
    ```
    pip install -r requirements.txt
    ```
 
-## Usage
+## Utilisation
 
-1. Run the application:
+1. Lancez l'application :
    ```
-   python run.py
+   python __init__.py
    ```
+2. Ouvrez votre navigateur web et accédez à http://127.0.0.1:5000 pour utiliser l'application.
 
-2. Open your web browser and navigate to `http://127.0.0.1:5000` to access the application.
+3. L'application affiche :
 
-3. The application will display the logged active windows and provide options to start and stop the logging process.
+Les fenêtres actives actuelles.
+Les journaux des fenêtres actives.
+Un graphique des statistiques des fenêtres les plus utilisées.
+Une interface pour configurer les paramètres de journalisation.
 
-## Logging
+## Journalisation
 
-The active window information is logged in the `logs/active_windows.log` file. Each entry includes a timestamp and the name of the active window.
+Les informations sur les fenêtres actives sont enregistrées dans le fichier `logs/active_windows.log`. Chaque entrée inclut un horodatage et le nom de la fenêtre active.
 
-## Contributing
+## Configuration
 
-Feel free to submit issues or pull requests for improvements or bug fixes.
+Les informations sur les fenêtres actives sont enregistrées dans le fichier logs/active_windows.log. Chaque entrée inclut un horodatage et le nom des fenêtres actives.
 
-## License
+Configuration
+Vous pouvez configurer les paramètres suivants via l'interface utilisateur ou en modifiant le fichier config.py :
 
-This project is licensed under the MIT License.
+LOG_INTERVAL : Intervalle de temps (en secondes) entre chaque enregistrement.
+REMOTE_SERVER_URL : URL du serveur distant pour la journalisation (si activée).
+REMOTE_LOGGING : Activer ou désactiver la journalisation distante.
+
+## Api
+
+Endpoints disponibles :
+
+GET /api/windows : Récupère les fenêtres actives actuelles.
+
+GET /api/logs : Récupère les journaux des fenêtres actives.
+
+GET /api/config : Récupère la configuration actuelle.
+
+POST /api/config : Met à jour la configuration.
+
+GET /api/window_statistics : Génère un graphique des statistiques des fenêtres.
+
+## Contribution
+N'hésitez pas à soumettre des issues ou des pull requests pour des améliorations ou des corrections de bugs.
+## Licence
+
+Ce projet est sous licence MIT.
