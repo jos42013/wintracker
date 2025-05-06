@@ -1,0 +1,307 @@
+/* Header Styling */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Gradient plus sophistiqué */
+    color: white;
+    padding: 1rem 2.5rem;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.2rem); /* Taille responsive */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Police système moderne */
+    border-bottom: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Ombre douce et moderne */
+    backdrop-filter: blur(8px); /* Effet de flou pour le verre */
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 0 0 16px 16px; /* Coins arrondis en bas */
+    margin: 0 1rem;
+    max-width: 100%;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation fluide */
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Ombre interactive */
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        font-weight: 800; /* Plus épais */
+        background: linear-gradient(to right, #fff 20%, #ff8a00 100%); /*Gradient texte*/
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        samp {
+            font-family: 'Space Mono', monospace; /* Police tech */
+            letter-spacing: -0.05em;
+        }
+    }
+
+    nav {
+        ul {
+            display: flex;
+            gap: 1.5rem; /* Utilise gap au lieu de margin */
+            
+            li {
+                list-style: none;
+                position: relative;
+                
+                a {
+                    color: rgba(255, 255, 255, 0.9);
+                    text-decoration: none;
+                    font-weight: 600;
+                    padding: 0.5rem 0;
+                    transition: all 0.2s ease;
+                    
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background: #ff8a00;
+                        transition: width 0.3s ease;
+                    }
+                    
+                    &:hover {
+                        color: white;
+                        
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    color: white;
+    padding: 2rem 2.5rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px 16px 0 0;
+    margin: 2rem 1rem 0 1rem;
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    .logo {
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+        samp {
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(to right, #fff 20%, #ff8a00 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+    }
+
+    .theme-switcher {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.8;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
+        
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 44px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            
+            &::before {
+                content: '';
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background: white;
+                top: 2px;
+                left: 3px;
+                transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+            
+            &:checked {
+                background: #ff8a00;
+                
+                &::before {
+                    transform: translateX(20px);
+                }
+            }
+        }
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 20px;
+    .panel_statistics {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .panel_current-windows {
+        grid-row: 1;
+        grid-column: 1;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .panel_logs {
+        grid-row: 1;
+        grid-column: 2;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .panel_logs:hover, .panel_current-windows:hover {
+        transform: translateY(-4px); /* Slight elevation on hover */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    }
+    .panel_config {
+        grid-row: 3;
+        grid-column: 1 / span 2;
+        background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Subtle gradient for a modern look */
+        border-radius: 12px; /* Slightly more rounded corners */
+        padding: 24px; /* Increased padding for better spacing */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Softer and more pronounced shadow */
+        border: 1px solid #e0e0e0; /* Light border for better definition */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    }
+
+    .panel_config:hover {
+        transform: translateY(-4px); /* Slight elevation on hover */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    }
+    #current-windows-list, #logs-container {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .config-form {
+        display: grid;
+        gap: 1.5rem; /* Augmente l'espacement pour une meilleure lisibilité */
+        padding: 1rem; /* Ajoute un padding pour un meilleur espacement interne */
+        background: #ffffff; /* Fond blanc pour contraste */
+        border-radius: 8px; /* Coins arrondis */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; /* Ajoute un espacement entre les éléments */
+    }
+    label {
+        font-size: 1rem; /* Taille de police lisible */
+        font-weight: 600; /* Met en valeur les labels */
+        color: #333; /* Couleur sombre pour contraste */
+    }
+    input, select, textarea {
+        padding: 0.8rem; /* Ajoute un padding pour un meilleur confort */
+        border: 1px solid #ddd; /* Bordure légère */
+        border-radius: 4px; /* Coins arrondis */
+        font-size: 1rem; /* Taille de police uniforme */
+        transition: border-color 0.3s ease; /* Animation fluide */
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #4CAF50; /* Couleur de focus */
+        outline: none; /* Supprime le contour par défaut */
+        box-shadow: 0 0 4px rgba(76, 175, 80, 0.4); /* Effet de focus */
+    }
+    button {
+        padding: 0.8rem 1.5rem; /* Taille plus généreuse */
+        background-color: #4CAF50; /* Couleur principale */
+        color: white; /* Texte blanc */
+        border: none; /* Supprime les bordures */
+        border-radius: 4px; /* Coins arrondis */
+        cursor: pointer; /* Curseur interactif */
+        font-size: 1rem; /* Taille de police uniforme */
+        font-weight: 600; /* Texte en gras */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Animation fluide */
+    }
+    button:hover {
+        background-color: #45a049; /* Couleur au survol */
+        transform: translateY(-2px); /* Légère élévation */
+    }
+    button:active {
+        transform: translateY(0); /* Réinitialise l'élévation */
+    }
+    #window-stats-graph {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        padding: 10px;
+    }
+}
+
+/* Dark mode adaptation */
+@media (prefers-color-scheme: dark) {
+    footer {
+        background: linear-gradient(135deg, rgba(51, 63, 117, 0.9) 0%, rgba(59, 37, 81, 0.9) 100%);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}

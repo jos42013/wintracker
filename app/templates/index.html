@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Windows Logger</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Active Windows Monitor</h1>
+        
+        <div class="dashboard">
+            <div class="panel_statistics">
+                <h2>Active Windows Statistics</h2>
+                <img id="window-stats-graph" alt="Window Statistics Graph" style="width: 100%; max-height: 400px;">
+            </div>
+            <div class="panel_current-windows">
+                <h2>Current Active Windows</h2>
+                <div id="current-windows-list"></div>
+            </div>
+            <div class="panel_logs">
+                <h2>Activity Logs</h2>
+                <div id="logs-container"></div>
+            </div>
+            <div class="panel_config">
+                <h2>Configuration</h2>
+                <form id="config-form">
+                    <!-- Configuration form will be inserted here by JavaScript -->
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../static/js/scripts.js"></script>
+</body>
+
+
+</html>

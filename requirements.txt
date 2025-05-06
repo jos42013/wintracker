@@ -1,0 +1,4 @@
+Flask==2.0.3
+pygetwindow==0.0.5
+schedule==1.1.0
+gunicorn==20.1.0
